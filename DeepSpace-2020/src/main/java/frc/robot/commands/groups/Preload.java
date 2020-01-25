@@ -9,7 +9,6 @@ package frc.robot.commands.groups;
 
 import edu.wpi.first.wpilibj.command.CommandGroup;
 import frc.robot.commands.BeakClose;
-import frc.robot.commands.BeakOpen;
 import frc.robot.commands.PauseForTime;
 import frc.robot.commands.PreloadFinish;
 import frc.robot.commands.PreloadSetup;

@@ -7,9 +7,6 @@
 
 package frc.robot.subsystems;
 
-import com.ctre.phoenix.motorcontrol.ControlMode;
-import com.ctre.phoenix.motorcontrol.DemandType;
-import com.ctre.phoenix.motorcontrol.can.TalonSRX;
 import com.ctre.phoenix.motorcontrol.can.WPI_TalonSRX;
 
 import edu.wpi.first.wpilibj.command.Subsystem;
@@ -41,8 +38,6 @@ public class DriveTrain extends Subsystem {
   public void drive(double leftPower, double rightPower){
     leftMotors.set(com.ctre.phoenix.motorcontrol.ControlMode.PercentOutput, leftPower);
     rightMotors.set(com.ctre.phoenix.motorcontrol.ControlMode.PercentOutput, rightPower);
-    SmartDashboard.putNumber("Left Current Draw", leftMotors.getOutputCurrent());
-    SmartDashboard.putNumber("Right Current Draw", rightMotors.getOutputCurrent());
     SmartDashboard.putNumber("Left Voltage", leftMotors.getMotorOutputPercent());
     SmartDashboard.putNumber("Right Voltage", rightMotors.getMotorOutputPercent());
   }

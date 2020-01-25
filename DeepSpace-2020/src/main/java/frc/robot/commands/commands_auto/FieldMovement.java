@@ -8,10 +8,7 @@
 package frc.robot.commands.commands_auto;
 
 import edu.wpi.first.wpilibj.command.CommandGroup;
-import frc.robot.RobotMap;
-import frc.robot.RobotMap_Paths;
 import frc.robot.RobotMap_Paths.MotionProfiles;
-import frc.robot.commands.TurnToAngle;
 import frc.robot.commands.commands_auto.PathFollower5010.Direction;
 
 public class FieldMovement extends CommandGroup {

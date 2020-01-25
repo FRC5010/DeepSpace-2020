@@ -7,15 +7,12 @@
 
 package frc.robot;
 
-import edu.wpi.first.wpilibj.DriverStation;
 import edu.wpi.first.wpilibj.RobotController;
 import edu.wpi.first.wpilibj.TimedRobot;
-import edu.wpi.first.wpilibj.DriverStation.MatchType;
 import edu.wpi.first.wpilibj.command.Command;
 import edu.wpi.first.wpilibj.command.Scheduler;
 import edu.wpi.first.wpilibj.smartdashboard.SendableChooser;
 import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
-import frc.robot.commands.WristMM;
 import frc.robot.commands.groups.DriveOffHABLevel1;
 import frc.robot.commands.groups.LeftRocket;
 import frc.robot.commands.groups.LeftShipFront;
@@ -27,8 +24,6 @@ import frc.robot.commands.groups.RightRocket;
 import frc.robot.commands.groups.RightShipFront;
 import frc.robot.commands.groups.RightShipSide;
 import frc.robot.subsystems.Pose;
-import frc.robot.subsystems.Wrist.Position;
-import frc.robot.util.Instrum;
 
 /**
  * The VM is configured to automatically run this class, and to call the
@@ -52,17 +47,17 @@ public class Robot extends TimedRobot {
     RobotMap.init();
     oi = new OI();
 
-    m_chooser.addOption("HAB Level 1", new DriveOffHABLevel1());
-    m_chooser.addOption("Middle Ship Straight On", new MiddleShipLeft());
-    m_chooser.addOption("Middle Ship Left", new MiddleShipLeft());
-    m_chooser.addOption("Middle Ship Right", new MiddleShipRight());
-    m_chooser.addOption("Left Ship Front", new LeftShipFront());
-    m_chooser.addOption("Right Ship Front", new RightShipFront());
-    m_chooser.addOption("Left Ship Side", new LeftShipSide());
-    m_chooser.addOption("Right Ship Side", new RightShipSide());
-    m_chooser.addOption("Left Rocket", new LeftRocket());
-    m_chooser.addOption("Right Rocket", new RightRocket());
-    m_chooser.setDefaultOption("talib", new Preload());
+    // m_chooser.addOption("HAB Level 1", new DriveOffHABLevel1());
+    // m_chooser.addOption("Middle Ship Straight On", new MiddleShipLeft());
+    // m_chooser.addOption("Middle Ship Left", new MiddleShipLeft());
+    // m_chooser.addOption("Middle Ship Right", new MiddleShipRight());
+    // m_chooser.addOption("Left Ship Front", new LeftShipFront());
+    // m_chooser.addOption("Right Ship Front", new RightShipFront());
+    // m_chooser.addOption("Left Ship Side", new LeftShipSide());
+    // m_chooser.addOption("Right Ship Side", new RightShipSide());
+    // m_chooser.addOption("Left Rocket", new LeftRocket());
+    // m_chooser.addOption("Right Rocket", new RightRocket());
+    // m_chooser.setDefaultOption("talib", new Preload());
     // chooser.addOption("My Auto", new MyAutoCommand());
     SmartDashboard.putData("Auto mode", m_chooser);
   }
@@ -77,9 +72,9 @@ public class Robot extends TimedRobot {
    */
   @Override
   public void robotPeriodic() {
-    if (isDisabled()) {
-      Pose.update(RobotController.getFPGATime());
-    }
+    // if (isDisabled()) {
+    //   Pose.update(RobotController.getFPGATime());
+    // }
   }
 
   /**
@@ -129,7 +124,7 @@ public class Robot extends TimedRobot {
    */
   @Override
   public void autonomousPeriodic() {
-    Pose.update(RobotController.getFPGATime());
+//    Pose.update(RobotController.getFPGATime());
     if (oi.driveTrainForward.getValue() != 0 || oi.driveTrainTurn.getValue() != 0) {
       m_autonomousCommand.cancel();
     }
@@ -152,7 +147,7 @@ public class Robot extends TimedRobot {
    */
   @Override
   public void teleopPeriodic() {
-    Pose.update(RobotController.getFPGATime());
+ //   Pose.update(RobotController.getFPGATime());
     Scheduler.getInstance().run();
   }
 
@@ -161,6 +156,6 @@ public class Robot extends TimedRobot {
    */
   @Override
   public void testPeriodic() {
-    Pose.update(RobotController.getFPGATime());
+//    Pose.update(RobotController.getFPGATime());
   }
 }

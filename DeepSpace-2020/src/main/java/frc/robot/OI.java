@@ -12,22 +12,15 @@ import edu.wpi.first.wpilibj.buttons.Button;
 import edu.wpi.first.wpilibj.buttons.JoystickButton;
 import frc.robot.commands.BeakClose;
 import frc.robot.commands.BeakOpen;
-import frc.robot.commands.DriveTrainCharacterizer;
-import frc.robot.commands.DriveTrainCharacterizer.Direction;
-import frc.robot.commands.DriveTrainCharacterizer.TestMode;
 import frc.robot.commands.ElevatorReset;
 import frc.robot.commands.LimeLightState;
-import frc.robot.commands.ResetGyro;
 import frc.robot.commands.LimeLightState.State;
-import frc.robot.commands.commands_auto.FieldMovement;
+import frc.robot.commands.ResetGyro;
 import frc.robot.commands.ShiftDown;
 import frc.robot.commands.ShiftUp;
 import frc.robot.commands.ToggleMotorSafety;
-import frc.robot.commands.VisionAssistedSteering;
-import frc.robot.commands.WristMM;
 import frc.robot.commands.WristReset;
 import frc.robot.commands.groups.AllComeDown;
-import frc.robot.commands.groups.LowGearVAD;
 import frc.robot.commands.groups.PlacementHigh;
 import frc.robot.commands.groups.PlacementMiddle;
 import frc.robot.commands.groups.PlacementShipCargo;
@@ -90,10 +83,10 @@ public class OI {
     driverLB.whenPressed(new BeakOpen());
     driverRB.whenPressed(new BeakClose());
     
-    driverX.whenPressed(new LowGearVAD());
+    // driverX.whenPressed(new LowGearVAD());
     driverY.whenPressed(new LimeLightState(State.DRIVER));
 
-    driverA.whenPressed(new VisionAssistedSteering());
+    // driverA.whenPressed(new VisionAssistedSteering());
     driverB.whenPressed(new LimeLightState(State.AUTO));
     
     driveTrainForward = new JoystickAxis(driver, 1, true, 1);
